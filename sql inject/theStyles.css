@@ -1,0 +1,19 @@
+/*changelog
+02/15/2018 patrick
+-body formating
+-textarea formating
+-button formating
+*/
+
+body{
+  font-family: serif, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+textarea{
+	font-size: 14px;
+}
+  
+  

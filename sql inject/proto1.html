@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+Website proto type one
+
+
+**************
+*description?*
+**************
+quick website to show what we can do with sql injections
+
+
+************
+*change log* (format: DD/MM/YYYY name then press return)
+************
+
+02/15/2018 patrick
+-create date MOTHERFUCKER
+-added header and header detaills
+-made textarea //better for seeing what we pump this with
+-made submit button // maybe somthing better
+
+
+02/27/2018 patrick
+-updated button fuctionallity
+-made login boxes
+-testing fuction to make sure buttons work
+-added login and password box and button
+
+3/1/2018 patrick
+-added buttons for showing our defences
+-clean up look
+---moved down the login section to below the textarea injections
+-->
+
+
+<!--for making it look pretty-->
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "theStyles.css" >
+
+
+<head>
+	<title>PLEASE senpi</title>
+	<meta charset="UTF-8">
+	<meta name="GROUP1" content="[name]"/>
+	<meta name="description" content="[application title]"/>
+	<meta http-equiv="Expires" content="-1">
+<head>
+
+
+<!--functions-->
+<script type="text/javascript">
+	"use strict";
+
+	//********
+	//**test**
+	//********
+	function testOnClick()
+	{
+		window.alert("CONGRATS YOU DID THE THING!");
+	}
+</script>
+<!--end of fuctions-------------------------------->
+
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<!--area may vary depending on size of injection-->
+				<textarea cols="100" rows="25" id="BOX"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+      <!--unsafe button-->
+			<td>
+				<button type="button"
+				id="unSafeTextBox"
+				onclick="testOnClick()">
+				PUSH ME YOUR CODE SENPI! :)
+				</button>
+
+        <!--safe button-->
+
+  				<button type="button"
+  				id="safeTextBox"
+  				onclick="testOnClick()">
+  				CLEAN ME UP, SCOTTY!
+  				</button>
+			</td>
+		</tr>
+
+
+    <tr>
+      <td>
+        <!--spacing from the top box-->
+        <br><br><br><br>
+        <label>username:<input type="text" id="user"></label>
+        <br>
+        <label>password:<input type="password" id="pass"></label>
+        <br><br>
+
+        <!--unsafe button-->
+        <button
+         id="unSafeLogin"
+         onclick="testOnClick()">
+         login SENPi
+        </button>
+
+        <!--safe button-->
+
+  				<button type="button"
+  				id="safeLogin"
+  				onclick="testOnClick()">
+  				CLEAN ME UP, SCOTTY!
+  				</button>
+			</td>
+      </td>
+</body>
+
+</html>
