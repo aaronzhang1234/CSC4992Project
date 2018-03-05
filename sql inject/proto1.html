@@ -31,7 +31,13 @@ quick website to show what we can do with sql injections
 3/1/2018 patrick
 -added buttons for showing our defences
 -clean up look
----moved down the login section to below the textarea injections
+---moved down the login section to below the textarea injection
+
+3/5/2018 aaron
+- <3 Changelogs
+- added a form with the SQL injection
+- added file login.php that the form leads to, this will be the file that accesses mySQL.
+- changed up the formatting a little bit, making all the tds and trs line up.
 -->
 
 
@@ -75,7 +81,7 @@ quick website to show what we can do with sql injections
 		</tr>
 
 		<tr>
-      <!--unsafe button-->
+    		    <!--unsafe button-->
 			<td>
 				<button type="button"
 				id="unSafeTextBox"
@@ -83,7 +89,7 @@ quick website to show what we can do with sql injections
 				PUSH ME YOUR CODE SENPI! :)
 				</button>
 
-        <!--safe button-->
+       		    <!--safe button-->
 
   				<button type="button"
   				id="safeTextBox"
@@ -94,31 +100,34 @@ quick website to show what we can do with sql injections
 		</tr>
 
 
-    <tr>
-      <td>
-        <!--spacing from the top box-->
-        <br><br><br><br>
-        <label>username:<input type="text" id="user"></label>
-        <br>
-        <label>password:<input type="password" id="pass"></label>
-        <br><br>
+		<tr>
+			<td>
+				<!--spacing from the top box-->
+				<br><br><br><br>
+				<form method="POST" action="login.php">        
+					<label>username:<input type="text" id="user" name = "user"></label>
 
-        <!--unsafe button-->
-        <button
-         id="unSafeLogin"
-         onclick="testOnClick()">
-         login SENPi
-        </button>
+					<br>
+					<label>password:<input type="password" id="pass" name ="pass"></label>
+					<br><br>
 
-        <!--safe button-->
+					<!--unsafe button-->
+					<button
+					id="unSafeLogin"
+					onclick="testOnClick()">
+					login SENPi
+					</button>
 
-  				<button type="button"
-  				id="safeLogin"
-  				onclick="testOnClick()">
-  				CLEAN ME UP, SCOTTY!
-  				</button>
+					<!--safe button-->
+
+					<button type="button"
+					id="safeLogin"
+					onclick="testOnClick()">
+					CLEAN ME UP, SCOTTY!
+					</button>
+					<button type="submit">push this</button>
+				</form>
 			</td>
-      </td>
-</body>
-
+    	</td>
+	</body>
 </html>
