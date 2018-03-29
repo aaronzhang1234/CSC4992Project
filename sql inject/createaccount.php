@@ -9,9 +9,9 @@
     if($conn->connect_error){
         echo "connection failed";
     }
-    $sql = "SELECT * FROM sqlinject WHERE uname = '".$usern."' AND pword = '".$passw."'";
+    $sql = "INSERT INTO sqlinject (uname, pword) VALUES('". $usern."' , '".$passw."' )";
     echo $sql;
-    
+    /*
     $result = $conn->query($sql);
     echo "<br>"; 
     if($result){
@@ -19,5 +19,5 @@
     }else{
         echo "failed :(";
     }
-    
+    */
 ?>
