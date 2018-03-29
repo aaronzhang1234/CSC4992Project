@@ -13,9 +13,11 @@
     echo $sql;
     
     $result = $conn->query($sql);
+    echo "<br>";
+    echo gettype($result);
     echo "<br>"; 
     if($result){
-        echo "New record created successfully";
+        echo "Successfully Logged in";
     }else{
         echo "failed :(";
     }

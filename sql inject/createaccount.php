@@ -11,7 +11,7 @@
     }
     $sql = "INSERT INTO sqlinject (uname, pword) VALUES('". $usern."' , '".$passw."' )";
     echo $sql;
-    /*
+    
     $result = $conn->query($sql);
     echo "<br>"; 
     if($result){
@@ -19,5 +19,5 @@
     }else{
         echo "failed :(";
     }
-    */
+
 ?>
