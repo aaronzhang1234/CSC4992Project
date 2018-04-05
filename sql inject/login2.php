@@ -14,19 +14,17 @@
     function SignIn()
     {
     $conn = new mysqli(DB_HOST, DB_USER,DB_PASSWORD,DB_NAME)or die("Failed to connect to MySQL: " . mysqli_error());
-    echo "inside function";
     if(!empty($_POST['user']))
     {
-        echo "test";
         $usern = $_POST['user'];
         $passw = $_POST['pass'];
         $query = mysqli_query($conn, "SELECT * FROM sqlinject where uname = '$_POST[user]' AND pword = '$_POST[pass]'") or die(mysqli_error($conn)); 
-        echo "opeo";
+        echo "<br>";
+        echo "SELECT * FROM sqlinject where uname = '$_POST[user]' AND pword = '$_POST[pass]'";
+        echo "<br>";
         $row = mysqli_fetch_array($query); 
-        echo "life";
-        if(!empty($row['uname']) AND !empty($row['pword'])) 
-        { 
-            $_SESSION['userName'] = $row['pass']; 
+        if(!empty($row['uname']) AND !empty($row['pword'])and secure()) 
+        {  
             echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE..."; 
 
         } 
@@ -39,9 +37,34 @@
     }
     echo "test";
 
-    if(isset($_POST['submit']))
-    {
+    if(isset($_POST['submit'])){
         SignIn();
     }
 
+    function secure()
+    {
+        $conn = new mysqli("localhost", "root","" , "sqlinjecttest");
+        if($conn->connect_error){
+            echo "connection failed";
+        }
+
+        $usern = $_POST['user'];
+        $passw = $_POST['pass'];
+
+        $stmt = $conn->prepare("SELECT * FROM sqlinject WHERE uname = ? AND pword = ?");
+        $stmt->bind_param("ss", $usern, $passw );
+
+        $stmt->execute();
+        $stmt -> store_result();
+        $num = $stmt -> num_rows;
+        if ($num>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        echo "This returned back ". $num.  " rows";
+    }
 ?>
