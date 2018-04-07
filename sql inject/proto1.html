@@ -48,7 +48,7 @@ quick website to show what we can do with sql injections
 
 
 <head>
-	<title>PLEASE senpi</title>
+	<title>SQL Inject Test</title>
 	<meta charset="UTF-8">
 	<meta name="GROUP1" content="[name]"/>
 	<meta name="description" content="[application title]"/>
@@ -74,21 +74,9 @@ quick website to show what we can do with sql injections
 <body>
 	<table>
 		<tr>
-			<td>
-				<!--area may vary depending on size of injection-->
-				<textarea cols="100" rows="25" id="BOX"></textarea>
-			</td>
-		</tr>
-
-		<tr>
-    		    <!--unsafe button-->
-			<td>
-				<button type="button"
-					id="unSafeTextBox"
-					onclick="testOnClick()">
-					Login
-				</button>
-			</td>
+			<h1>' or 1+1 #</h1>
+			<h1>'); DROP TABLE login; #</h1>
+			<h1>'; DROP TABLE login; #</h1> 
 		</tr>
 
 
@@ -114,7 +102,7 @@ quick website to show what we can do with sql injections
 				</form>
 				<br>
 				<form method="POST" action="securelogin.php">
-					<label>new username:<input type="test" id="user" name = "user"></label>
+					<label>username:<input type="test" id="user" name = "user"></label>
 					<br>
 					<label>password:<input type="password" id="pass" name ="pass"></label>
 					<br>
