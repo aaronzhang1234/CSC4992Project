@@ -84,18 +84,10 @@ quick website to show what we can do with sql injections
     		    <!--unsafe button-->
 			<td>
 				<button type="button"
-				id="unSafeTextBox"
-				onclick="testOnClick()">
-				PUSH ME YOUR CODE SENPI! :)
+					id="unSafeTextBox"
+					onclick="testOnClick()">
+					Login
 				</button>
-
-       		    <!--safe button-->
-
-  				<button type="button"
-  				id="safeTextBox"
-  				onclick="testOnClick()">
-  				CLEAN ME UP, SCOTTY!
-  				</button>
 			</td>
 		</tr>
 
@@ -112,28 +104,13 @@ quick website to show what we can do with sql injections
 					<button type="submit">Create Account</button>
 				</form>
 				<br>
-				<form method="POST" action="InjectionLogin.php">        
+				<form method="POST" action="notSecureLogin.php">        
 					<label>username:<input type="text" id="user" name = "user"></label>
 
 					<br>
 					<label>password:<input type="password" id="pass" name ="pass"></label>
 					<br><br>
-
-					<!--unsafe button-->
-					<button
-					id="unSafeLogin"
-					onclick="testOnClick()">
-					login SENPi
-					</button>
-
-					<!--safe button-->
-
-					<button type="button"
-					id="safeLogin"
-					onclick="testOnClick()">
-					CLEAN ME UP, SCOTTY!
-					</button>
-					<button type="submit">push this</button>
+					<button type="submit">Unsafe Login</button>
 				</form>
 				<br>
 				<form method="POST" action="login2.php">
@@ -141,7 +118,7 @@ quick website to show what we can do with sql injections
 					<br>
 					<label>password:<input type="password" id="pass" name ="pass"></label>
 					<br>
-					<button type="submit">Berate Account</button>
+					<button type="submit">Safe Login</button>
 				</form>
 			</td>
     	</td>

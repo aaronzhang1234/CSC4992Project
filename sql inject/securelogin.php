@@ -13,5 +13,9 @@
     $stmt->execute();
     $stmt -> store_result();
     $num = $stmt -> num_rows;
-    echo "This returned back ". $num.  " rows";
+    if($num>0){
+        echo "Successfully Logged In";
+    }else{
+        echo "Failed to Login"
+    }
 ?>
